@@ -105,8 +105,11 @@
         </div>
         
         <div class="inputBox">
-          <input type="password" placeholder="Password" required>
-          <input type="password" placeholder="Confirm Password" required>
+            <input type="password" class="box" id="password" placeholder="Enter your password" onkeyup="return passwordChanged();" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  required/>
+            
+          <input type="password" placeholder="Confirm Password" class="box" id="password2" onkeyup="return passwordChanged();" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  required>
+          <label for="password" id="error2"  style=" font-size: 15px;margin-left: 0%;"></label>
+          <label for="password" id="error3"  style=" font-size: 15px;margin-left: 10%;"></label>
         </div>
         <input type="submit" class="btn" value="SIGN-UP" >
         
