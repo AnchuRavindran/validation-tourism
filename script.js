@@ -67,6 +67,33 @@ function passwordChanged()
     }
 }
 
+let password5 = document.getElementById("password5");
+function passwordChanged5()
+{
+
+
+    let regpass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/
+    if(regpass.test(password5.value))
+    {
+        error5.innerHTML = "Valid";
+        error5.style.color="green";
+        password.style.borderColor =  "#27ae60";
+        return true;
+    }
+    else
+    {
+        error5.innerHTML = "InValid";
+        error5.style.color="red";
+        password.style.borderColor =  "#e74c3c";
+        
+    }
+    if(password5.value=="")
+    {
+        password5.style.borderColor =  "lightgray";
+        return false;
+    }
+}
+
 
 
 
