@@ -167,7 +167,7 @@ header .search-bar-container label:hover{
 }
 
 .login-form-container.active{
-  top:0;
+  top:20%;
 }
 
 .login-form-container form{
@@ -333,9 +333,9 @@ header .search-bar-container label:hover{
 .about .row form .inputBox input{
   width:100%;
   padding:1rem;
-  border:.1rem solid rgba(0,0,0,.1);
+  /* border:.1rem solid rgba(0,0,0,.1); */
   font-size: 1.7rem;
-  color:#333;
+  color:#fff;
   text-transform: none;
 }
 
