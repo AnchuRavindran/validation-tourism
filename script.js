@@ -69,11 +69,10 @@ function passwordChanged()
 
 
 
-
 let ph = document.getElementById("ph");
 function validationph()
 {
-    let regph = /^[0-9]{3}[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/im;
+    let regph = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
     if(regph.test(ph.value))
     {
         error3.innerHTML = "Valid";
@@ -88,10 +87,4 @@ function validationph()
         ph.style.borderColor =  "#e74c3c";
         
     }
-    if(password.value=="")
-    {
-        password.style.borderColor =  "lightgray";
-        return false;
-    }
 }
-
