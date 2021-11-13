@@ -67,32 +67,7 @@ function passwordChanged()
     }
 }
 
-let password2 = document.getElementById("password2");
-function passwordChanged2()
-{
 
-
-    let regpass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/
-    if(regpass.test(password2.value))
-    {
-        error3.innerHTML = "Valid";
-        error3.style.color="green";
-        password.style.borderColor =  "#27ae60";
-        return true;
-    }
-    else
-    {
-        error3.innerHTML = "InValid";
-        error3.style.color="red";
-        password.style.borderColor =  "#e74c3c";
-        
-    }
-    if(password2.value=="")
-    {
-        password2.style.borderColor =  "lightgray";
-        return false;
-    }
-}
 
 
 
