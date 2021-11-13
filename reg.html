@@ -91,9 +91,11 @@
         </div>
         
         <div class="inputBox">
-            <input type="number" placeholder="Number" id="text1" required>
+            <input type="number" class="form-control" id="ph" placeholder="Enter your phone number" onkeyup="return validationph();" title="Must contain numbers from 0 to 9 only and a totel of 10 digits " size="10" pattern="^\d{10}$" required>
             <input type="email"  placeholder="Email-Address" id="email" class="form-control" onkeyup="return validation();" required>
-            <label for="email" id="error1" style="float: right;margin-left: 70%; font-size: 15px;"></label>
+            <label for="phonenumber" id="error3" style="font-size:15px ;margin-left: 10px;"></label>
+            <label for="email" id="error1"  style=" font-size: 15px;margin-left: 10%;"></label>
+            
             
         </div>
         
