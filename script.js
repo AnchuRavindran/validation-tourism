@@ -53,59 +53,34 @@ function validation()
 
 
 
-let password = document.getElementById("password");
-function passwordChanged()
-{
+// let password = document.getElementById("password");
+// function passwordChanged()
+// {
 
 
-    let regpass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/
-    if(regpass.test(password.value))
-    {
-        error2.innerHTML = "";
-        error2.style.color="green";
-        password.style.borderColor =  "#27ae60";
-        return true;
-    }
-    else
-    {
-        error2.innerHTML = "InValid";
-        error2.style.color="red";
-        password.style.borderColor =  "#e74c3c";
+//     let regpass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/
+//     if(regpass.test(password.value))
+//     {
+//         error2.innerHTML = "";
+//         error2.style.color="green";
+//         password.style.borderColor =  "#27ae60";
+//         return true;
+//     }
+//     else
+//     {
+//         error2.innerHTML = "InValid";
+//         error2.style.color="red";
+//         password.style.borderColor =  "#e74c3c";
         
-    }
-    if(password.value=="")
-    {
-        password.style.borderColor =  "lightgray";
-        return false;
-    }
-}
-
-let password5 = document.getElementById("password5");
-function passwordChanged5()
-{
+//     }
+//     if(password.value=="")
+//     {
+//         password.style.borderColor =  "lightgray";
+//         return false;
+//     }
+// }
 
 
-    let regpass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/
-    if(regpass.test(password5.value))
-    {
-        error5.innerHTML = "";
-        error5.style.color="green";
-        password.style.borderColor =  "#27ae60";
-        return true;
-    }
-    else
-    {
-        error5.innerHTML = "InValid";
-        error5.style.color="red";
-        password.style.borderColor =  "#e74c3c";
-        
-    }
-    if(password5.value=="")
-    {
-        password5.style.borderColor =  "lightgray";
-        return false;
-    }
-}
 
 
 
@@ -138,4 +113,50 @@ function validationph()
         password.style.borderColor =  "lightgray";
         return false;
     }
+}
+
+
+function validatePassword(password) {
+                
+    // Do not show anything when the length of password is zero.
+    if (password.length === 0) {
+        document.getElementById("msg").innerHTML = "";
+        return;
+    }
+    // Create an array and push all possible values that you want in password
+    var matchedCase = new Array();
+    matchedCase.push("[$@$!%*#?&]"); // Special Charector
+    matchedCase.push("[A-Z]");      // Uppercase Alpabates
+    matchedCase.push("[0-9]");      // Numbers
+    matchedCase.push("[a-z]");     // Lowercase Alphabates
+
+    // Check the conditions
+    var ctr = 0;
+    for (var i = 0; i < matchedCase.length; i++) {
+        if (new RegExp(matchedCase[i]).test(password)) {
+            ctr++;
+        }
+    }
+    // Display it
+    var color = "";
+    var strength = "";
+    switch (ctr) {
+        case 0:
+        case 1:
+        case 2:
+            strength = "Very Weak";
+            color = "red";
+          
+            break;
+        case 3:
+            strength = "Medium";
+            color = "orange";
+            break;
+        case 4:
+            strength = "Strong";
+            color = "green";
+            break;
+    }
+    document.getElementById("msg").innerHTML = strength;
+    document.getElementById("msg").style.color = color;
 }
