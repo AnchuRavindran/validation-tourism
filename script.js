@@ -11,15 +11,24 @@ videoBtn.forEach(btn =>{
     });
 });
 
+
+
+
+
+
+
+
+
+
+
+
 let email = document.getElementById("email");
 function validation()
 {
-
-
     let regexp = /^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3}?)$/
     if(regexp.test(email.value))
     {
-        error1.innerHTML = "";
+        error1.innerHTML = "Valid";
         error1.style.color="green";
         email.style.borderColor =  "#27ae60";
         return true;
@@ -40,6 +49,10 @@ function validation()
 
 
 
+
+
+
+
 let password = document.getElementById("password");
 function passwordChanged()
 {
@@ -48,7 +61,7 @@ function passwordChanged()
     let regpass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/
     if(regpass.test(password.value))
     {
-        error2.innerHTML = "";
+        error2.innerHTML = "Valid";
         error2.style.color="green";
         password.style.borderColor =  "#27ae60";
         return true;
@@ -99,13 +112,16 @@ function passwordChanged5()
 
 
 
+
+
+
 let ph = document.getElementById("ph");
 function validationph()
 {
     let regph = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
     if(regph.test(ph.value))
     {
-        error3.innerHTML = "";
+        error3.innerHTML = "Valid";
         error3.style.color="green";
         ph.style.borderColor =  "#27ae60";
         return true;
@@ -116,5 +132,10 @@ function validationph()
         error3.style.color="red";
         ph.style.borderColor =  "#e74c3c";
         
+    }
+    if(password.value=="")
+    {
+        password.style.borderColor =  "lightgray";
+        return false;
     }
 }
