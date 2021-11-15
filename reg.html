@@ -61,7 +61,7 @@
             <input type="number" placeholder="Age" class="box" required style="width: 49% ;margin-left: 1%;  height: 15%;">
             <label for="phonenumber" id="error3" style="font-size:15px ;margin-left: 10px;"></label>
             <!-- <textarea rows="3" cols="6" name="text" class="box" placeholder="Address" required></textarea> -->
-        <input type="text"  placeholder="Email-Address" id="email" class="box" onkeyup="return validation();"  size="30" required>
+        <input type="text"  placeholder="Email-Address" id="email" class="box" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" onkeyup="return validation();"  size="30" required>
         <label for="email" id="error1"  style=" font-size: 15px;margin-left: 0%;"></label>
        
         <input type="password" class="box" id="password" placeholder="Enter your password" onkeyup="validatePassword(this.value);"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/><span style="font-size: 15px;" id="msg"></span>
